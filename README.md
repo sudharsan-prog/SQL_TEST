@@ -3,8 +3,7 @@ Assessment Task:
 down of this sales data. 
 2. Share SQL scripts used to explore data and generate metrics & Key insights 
 in bullet points via GitHub link 
-
-select * from Assessment_TE;
+----------------------------------------------------------------------------------------------------------------------------
 
 
 --Rounded the TransactionAmount to the nearest whole number
