@@ -21,6 +21,8 @@ Insights
 
 8 Saturday saw the highest sales, with 213,321 transactions, indicating increased weekend shopping activity. This trend suggests that customers prefer making purchases during their leisure time. Businesses can leverage this by offering special weekend promotions and optimizing inventory for peak demand.
 
+9 
+
 -------------------------------------------------------------------------------------------------------------------------------------------
 
 --Calculating the sum of TransactionAmount
