@@ -21,7 +21,8 @@ Insights
 
 8 Saturday saw the highest sales, with 213,321 transactions, indicating increased weekend shopping activity. This trend suggests that customers prefer making purchases during their leisure time. Businesses can leverage this by offering special weekend promotions and optimizing inventory for peak demand.
 
-9 
+9 Customer Age & Behavior: Older customers (Above 30 years) tend to make large purchases on Laptops.
+Younger customers (Below 30 years) tend to make large purchase on Notebooks.
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 
