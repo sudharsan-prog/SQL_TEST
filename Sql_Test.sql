@@ -60,3 +60,32 @@ FROM Assessment_TE
 WHERE ISDATE(TransactionDate) = 1  -- Ensure valid date values
 GROUP BY DATENAME(WEEKDAY, CAST(TransactionDate AS DATETIME))
 ORDER BY Total_Quantity_Sold DESC;
+
+--Most sold product based on customerage
+WITH AgeGroupSales AS (
+    SELECT 
+        ProductName,
+        CASE 
+            WHEN CustomerAge < 30 THEN 'Below 30'
+            WHEN CustomerAge > 30 THEN 'Above 30'
+        END AS AgeGroup,
+        COUNT(*) AS TotalSales
+    FROM Assessment_TE
+    WHERE CustomerAge IS NOT NULL
+    GROUP BY ProductName, CustomerAge
+),
+RankedProducts AS (
+    SELECT 
+        AgeGroup, 
+        ProductName, 
+        TotalSales,
+        RANK() OVER (PARTITION BY AgeGroup ORDER BY TotalSales DESC) AS SalesRank
+    FROM AgeGroupSales
+    WHERE AgeGroup IS NOT NULL
+)
+SELECT AgeGroup, ProductName, TotalSales
+FROM RankedProducts
+WHERE (AgeGroup = 'Above 30' AND SalesRank = 1) 
+   OR (AgeGroup = 'Below 30' AND (ProductName IS NOT NULL AND SalesRank = 2))
+ORDER BY AgeGroup, SalesRank;
+
